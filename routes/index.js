@@ -53,13 +53,12 @@ const getUserName = () => {
 }
 
 
-
+// Helper function for creating a user object
 const generateUser = () => {
 
   // Build multi-step values
   const userName = getUserName();
   const email = `${userName}@${rando(data.emails.domains)}${rando(data.emails.extensions)}`;
-
   const street = `${rando(data.addresses.streets.numbers)} ${rando(data.addresses.streets.names)} ${rando(data.addresses.streets.suffixes)}`;
   const month = rando(data.numbers.slice(0, 12));
   const day = getDay(month);

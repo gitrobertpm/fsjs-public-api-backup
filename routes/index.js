@@ -59,10 +59,9 @@ const generateUser = () => {
   // Build multi-step values
   const userName = getUserName();
   const email = `${userName}@${rando(data.emails.domains)}${rando(data.emails.extensions)}`;
-  const street = `${rando(data.addresses.streets.numbers)} ${rando(data.addresses.streets.names)} ${rando(data.addresses.streets.suffixes)}`;
   const month = rando(data.numbers.slice(0, 12));
   const day = getDay(month);
-  const date = `${rando(data.years)}/${month}/${day}`
+  const date = `${rando(data.years)}-${month}-${day}`
   const profilePic = rando(data.images);
 
   // API User Schema
@@ -73,8 +72,12 @@ const generateUser = () => {
 		},
     "email": email,
     "cell": "(503) 555-1234",
+    "phone": "(503) 555-4321",
     "location": {
-      "street": street,
+      "street": {
+        "number": `${rando(data.addresses.streets.numbers)}`,
+        "name": `${rando(data.addresses.streets.names)} ${rando(data.addresses.streets.suffixes)}`
+      },
       "city": rando(data.addresses.cities),
       "state": rando(data.addresses.states),
       "postcode": rando(data.addresses.zipcodes)

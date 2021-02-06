@@ -2,12 +2,41 @@
 
 This REST API is just meant to be used as a backup if and when the https://randomuser.me/ API is down.
 
-To run locally, download project, point command line at root, run `npm install`, then `npm start`.  
+Property values are randomly retrieved from JSON collection of possible values.
 
-Then open any Public API project, and replace fetch request URL with - http://localhost:5000/api.
+Response result is array of 12 random user objects with the following schema:
 
-But be sure to save original Random User URL as this app is only meant as a backup.
+```
+  {
+    "name": {
+      "first": "firstName",
+      "last": "lastName"
+    },
+    "email": email,
+    "cell": "(503) 555-1234",
+    "phone": "(503) 555-4321",
+    "location": {
+      "street": {
+        "number": 5555,
+        "name": "streetName streetSuffix"
+      },
+      "city": "city",
+      "state": "state",
+      "postcode": 12345
+    },
+    "dob": {
+      "date": date
+    },
+    "picture": {
+      "large": profilePic,
+      "medium": profilePic,
+      "thumbnail": profilePic
+    }
+  }
+```
 
-Public API project should now work locally and display results of 12 new random users with each new request.
+To run locally, download project, point command line at root of project directory and run `npm install`, then `npm start`.  
 
-To test the the Public API project over the web, point the fetch at `https://fsjs-public-api-backup.herokuapp.com/api`
+Then use the following URL for your `fetch` request - https://fsjs-public-api-backup.herokuapp.com/api.
+
+Visit the above URL in your browser to see a raw, prettified display of the JSON results.

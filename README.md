@@ -39,4 +39,6 @@ To run locally, download project, point command line at root of project director
 
 Then use the following URL for your `fetch` request - https://fsjs-public-api-backup.herokuapp.com/api.
 
+To view an example of a client consuming this API, visit - https://gitrobertpm.github.io/random-user-client/.
+
 Visit the above URL in your browser to see a raw, prettified display of the JSON results.

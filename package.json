@@ -11,7 +11,7 @@
   "author": "robertpm",
   "License": "All rights reserved",
   "dependencies": {
-    "cookie-parser": "^1.4.4",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "debug": "^2.6.9",
     "express": "^4.21.2",
